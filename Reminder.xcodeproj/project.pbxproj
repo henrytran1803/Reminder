@@ -15,6 +15,8 @@
 		D28E956C2B8BA1FF00642D25 /* RemiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E956B2B8BA1FF00642D25 /* RemiderTests.swift */; };
 		D28E95762B8BA1FF00642D25 /* RemiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95752B8BA1FF00642D25 /* RemiderUITests.swift */; };
 		D28E95782B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95772B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift */; };
+		D290497D2B8E165C002FC73F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497C2B8E165C002FC73F /* LoginView.swift */; };
+		D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497E2B8E1772002FC73F /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,17 +37,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D28E95552B8BA1FC00642D25 /* Remider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28E95552B8BA1FC00642D25 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E95582B8BA1FC00642D25 /* RemiderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderApp.swift; sourceTree = "<group>"; };
 		D28E955A2B8BA1FC00642D25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D28E955C2B8BA1FC00642D25 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D28E955E2B8BA1FE00642D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D28E95612B8BA1FE00642D25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D28E95672B8BA1FF00642D25 /* RemiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28E95672B8BA1FF00642D25 /* ReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E956B2B8BA1FF00642D25 /* RemiderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderTests.swift; sourceTree = "<group>"; };
-		D28E95712B8BA1FF00642D25 /* RemiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28E95712B8BA1FF00642D25 /* ReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E95752B8BA1FF00642D25 /* RemiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderUITests.swift; sourceTree = "<group>"; };
 		D28E95772B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D290497C2B8E165C002FC73F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D290497E2B8E1772002FC73F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +90,9 @@
 		D28E95562B8BA1FC00642D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D28E95552B8BA1FC00642D25 /* Remider.app */,
-				D28E95672B8BA1FF00642D25 /* RemiderTests.xctest */,
-				D28E95712B8BA1FF00642D25 /* RemiderUITests.xctest */,
+				D28E95552B8BA1FC00642D25 /* Reminder.app */,
+				D28E95672B8BA1FF00642D25 /* ReminderTests.xctest */,
+				D28E95712B8BA1FF00642D25 /* ReminderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +100,9 @@
 		D28E95572B8BA1FC00642D25 /* Remider */ = {
 			isa = PBXGroup;
 			children = (
+				D29049812B8E17C7002FC73F /* Model */,
+				D29049802B8E17B0002FC73F /* Views */,
 				D28E95582B8BA1FC00642D25 /* RemiderApp.swift */,
-				D28E955A2B8BA1FC00642D25 /* ContentView.swift */,
-				D28E955C2B8BA1FC00642D25 /* Item.swift */,
 				D28E955E2B8BA1FE00642D25 /* Assets.xcassets */,
 				D28E95602B8BA1FE00642D25 /* Preview Content */,
 			);
@@ -130,12 +134,30 @@
 			path = RemiderUITests;
 			sourceTree = "<group>";
 		};
+		D29049802B8E17B0002FC73F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D28E955A2B8BA1FC00642D25 /* ContentView.swift */,
+				D290497C2B8E165C002FC73F /* LoginView.swift */,
+				D290497E2B8E1772002FC73F /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D29049812B8E17C7002FC73F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D28E955C2B8BA1FC00642D25 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D28E95542B8BA1FC00642D25 /* Remider */ = {
+		D28E95542B8BA1FC00642D25 /* Reminder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D28E957B2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "Remider" */;
+			buildConfigurationList = D28E957B2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
 				D28E95512B8BA1FC00642D25 /* Sources */,
 				D28E95522B8BA1FC00642D25 /* Frameworks */,
@@ -145,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = Remider;
+			name = Reminder;
 			productName = Remider;
-			productReference = D28E95552B8BA1FC00642D25 /* Remider.app */;
+			productReference = D28E95552B8BA1FC00642D25 /* Reminder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D28E95662B8BA1FF00642D25 /* RemiderTests */ = {
+		D28E95662B8BA1FF00642D25 /* ReminderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D28E957E2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "RemiderTests" */;
+			buildConfigurationList = D28E957E2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "ReminderTests" */;
 			buildPhases = (
 				D28E95632B8BA1FF00642D25 /* Sources */,
 				D28E95642B8BA1FF00642D25 /* Frameworks */,
@@ -163,14 +185,14 @@
 			dependencies = (
 				D28E95692B8BA1FF00642D25 /* PBXTargetDependency */,
 			);
-			name = RemiderTests;
+			name = ReminderTests;
 			productName = RemiderTests;
-			productReference = D28E95672B8BA1FF00642D25 /* RemiderTests.xctest */;
+			productReference = D28E95672B8BA1FF00642D25 /* ReminderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D28E95702B8BA1FF00642D25 /* RemiderUITests */ = {
+		D28E95702B8BA1FF00642D25 /* ReminderUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D28E95812B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "RemiderUITests" */;
+			buildConfigurationList = D28E95812B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "ReminderUITests" */;
 			buildPhases = (
 				D28E956D2B8BA1FF00642D25 /* Sources */,
 				D28E956E2B8BA1FF00642D25 /* Frameworks */,
@@ -181,9 +203,9 @@
 			dependencies = (
 				D28E95732B8BA1FF00642D25 /* PBXTargetDependency */,
 			);
-			name = RemiderUITests;
+			name = ReminderUITests;
 			productName = RemiderUITests;
-			productReference = D28E95712B8BA1FF00642D25 /* RemiderUITests.xctest */;
+			productReference = D28E95712B8BA1FF00642D25 /* ReminderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D28E95502B8BA1FC00642D25 /* Build configuration list for PBXProject "Remider" */;
+			buildConfigurationList = D28E95502B8BA1FC00642D25 /* Build configuration list for PBXProject "Reminder" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -222,9 +244,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D28E95542B8BA1FC00642D25 /* Remider */,
-				D28E95662B8BA1FF00642D25 /* RemiderTests */,
-				D28E95702B8BA1FF00642D25 /* RemiderUITests */,
+				D28E95542B8BA1FC00642D25 /* Reminder */,
+				D28E95662B8BA1FF00642D25 /* ReminderTests */,
+				D28E95702B8BA1FF00642D25 /* ReminderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28E955B2B8BA1FC00642D25 /* ContentView.swift in Sources */,
+				D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */,
 				D28E955D2B8BA1FC00642D25 /* Item.swift in Sources */,
+				D290497D2B8E165C002FC73F /* LoginView.swift in Sources */,
 				D28E95592B8BA1FC00642D25 /* RemiderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,12 +312,12 @@
 /* Begin PBXTargetDependency section */
 		D28E95692B8BA1FF00642D25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D28E95542B8BA1FC00642D25 /* Remider */;
+			target = D28E95542B8BA1FC00642D25 /* Reminder */;
 			targetProxy = D28E95682B8BA1FF00642D25 /* PBXContainerItemProxy */;
 		};
 		D28E95732B8BA1FF00642D25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D28E95542B8BA1FC00642D25 /* Remider */;
+			target = D28E95542B8BA1FC00642D25 /* Reminder */;
 			targetProxy = D28E95722B8BA1FF00642D25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +516,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remider.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Remider";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reminder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Reminder";
 			};
 			name = Debug;
 		};
@@ -512,7 +536,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remider.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Remider";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reminder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Reminder";
 			};
 			name = Release;
 		};
@@ -555,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D28E95502B8BA1FC00642D25 /* Build configuration list for PBXProject "Remider" */ = {
+		D28E95502B8BA1FC00642D25 /* Build configuration list for PBXProject "Reminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D28E95792B8BA1FF00642D25 /* Debug */,
@@ -564,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D28E957B2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "Remider" */ = {
+		D28E957B2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "Reminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D28E957C2B8BA1FF00642D25 /* Debug */,
@@ -573,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D28E957E2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "RemiderTests" */ = {
+		D28E957E2B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "ReminderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D28E957F2B8BA1FF00642D25 /* Debug */,
@@ -582,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D28E95812B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "RemiderUITests" */ = {
+		D28E95812B8BA1FF00642D25 /* Build configuration list for PBXNativeTarget "ReminderUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D28E95822B8BA1FF00642D25 /* Debug */,
