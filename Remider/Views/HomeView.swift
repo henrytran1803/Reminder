@@ -8,11 +8,39 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var tabSelected: Tab = .house
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+            ZStack {
+                VStack {
+                    switch tabSelected {
+                    case .house:
+                        ProfileView()
+                    case .person:
+                        ProfileView()
+                    case .gearshape:
+                        ProfileView()
+                    }
 
+                    Spacer()
+                }
+                .padding(.bottom, 60) // Adjust bottom padding to make space for the custom tab bar
+                
+                VStack {
+                    Spacer()
+                    ToolBarView(selectedTab: $tabSelected)
+                }
+            }
+            .overlay(
+                TabView(selection: $tabSelected) {
+                    ForEach(Tab.allCases, id: \.rawValue) { tab in
+                        Text(tab.rawValue.capitalized)
+                            .tag(tab)
+                    }
+                }
+                .hidden()
+            )
+        }
+    }
 #Preview {
     HomeView()
 }
