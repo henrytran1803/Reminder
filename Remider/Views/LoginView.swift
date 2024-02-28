@@ -12,12 +12,21 @@ struct LoginView: View {
     @State var password = ""
     @State var isShowingHome = false
     @State var isShowingRegistration = false
+    @State var isShowingAnimation = false
     @State private var showAlertEmpty = false
     var body: some View {
         NavigationView {
             VStack{
-                Image(systemName: "command.circle")
-                    .font(.system(size: 50))
+                
+                Image(systemName: "person.circle")
+                    .symbolRenderingMode(.palette)
+                    .renderingMode(.template)
+                    .font(.system(size: 60))
+                    .imageScale(.large)
+                    .rotationEffect(.degrees(isShowingAnimation ? 360 : 0))
+                    .foregroundColor(isShowingAnimation ?  .green: .red)
+                    .padding()
+                    .animation(.easeInOut, value: isShowingAnimation)
                 Spacer()
                 Text("User name")
                 TextField("User Name",text: $username)
@@ -66,7 +75,13 @@ struct LoginView: View {
                 }
                 
             }
-        }.background(Color.blue)
+        }.onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation {
+                                isShowingAnimation = true
+                   }
+           }
+        }
     }
 }
 struct PressEffectButtonStyle: ButtonStyle {

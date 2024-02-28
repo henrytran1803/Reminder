@@ -14,11 +14,19 @@ struct RegisterView: View {
     @State private var showAlert = false
     @State private var showAlertEmpty = false
     @State private var showAlertEmptyPass = false
+    @State private var isShowingAnimation = false
     var body: some View {
         NavigationView{
             VStack{
-                Image(systemName: "command.circle")
-                    .font(.system(size: 50))
+                Image(systemName: "pencil.and.outline")
+                    .symbolRenderingMode(.palette)
+                    .renderingMode(.template)
+                    .font(.system(size: 60))
+                    .imageScale(.large)
+                    .rotationEffect(.degrees(isShowingAnimation ? 360 : 0))
+                    .foregroundColor(isShowingAnimation ?  .green: .red)
+                    .padding()
+                    .animation(.easeInOut, value: isShowingAnimation)
                 Spacer()
                 Text("User name")
                 TextField("Username", text: $username)
@@ -92,6 +100,12 @@ struct RegisterView: View {
                                     
 
                 }
+            }.onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                withAnimation {
+                                    isShowingAnimation = true
+                       }
+               }
             }
         }
     }

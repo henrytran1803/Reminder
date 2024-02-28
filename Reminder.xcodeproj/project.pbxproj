@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2875A7B2B8F1F6F00C708FF /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2875A7A2B8F1F6F00C708FF /* Loading.swift */; };
+		D2875A7D2B8F344400C708FF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2875A7C2B8F344400C708FF /* HomeView.swift */; };
+		D2875A7F2B8F345000C708FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2875A7E2B8F345000C708FF /* ItemView.swift */; };
+		D2875A812B8F345B00C708FF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2875A802B8F345B00C708FF /* ProfileView.swift */; };
+		D2875A832B8F346D00C708FF /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2875A822B8F346D00C708FF /* ToolBarView.swift */; };
+		D2875A852B8F348100C708FF /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2875A842B8F348100C708FF /* ReminderView.swift */; };
 		D28E95592B8BA1FC00642D25 /* RemiderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95582B8BA1FC00642D25 /* RemiderApp.swift */; };
 		D28E955B2B8BA1FC00642D25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E955A2B8BA1FC00642D25 /* ContentView.swift */; };
 		D28E955D2B8BA1FC00642D25 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E955C2B8BA1FC00642D25 /* Item.swift */; };
@@ -37,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2875A7A2B8F1F6F00C708FF /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		D2875A7C2B8F344400C708FF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D2875A7E2B8F345000C708FF /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		D2875A802B8F345B00C708FF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D2875A822B8F346D00C708FF /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		D2875A842B8F348100C708FF /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		D28E95552B8BA1FC00642D25 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E95582B8BA1FC00642D25 /* RemiderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderApp.swift; sourceTree = "<group>"; };
 		D28E955A2B8BA1FC00642D25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +152,12 @@
 				D28E955A2B8BA1FC00642D25 /* ContentView.swift */,
 				D290497C2B8E165C002FC73F /* LoginView.swift */,
 				D290497E2B8E1772002FC73F /* RegisterView.swift */,
+				D2875A7A2B8F1F6F00C708FF /* Loading.swift */,
+				D2875A7C2B8F344400C708FF /* HomeView.swift */,
+				D2875A7E2B8F345000C708FF /* ItemView.swift */,
+				D2875A802B8F345B00C708FF /* ProfileView.swift */,
+				D2875A822B8F346D00C708FF /* ToolBarView.swift */,
+				D2875A842B8F348100C708FF /* ReminderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,7 +301,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28E955B2B8BA1FC00642D25 /* ContentView.swift in Sources */,
+				D2875A812B8F345B00C708FF /* ProfileView.swift in Sources */,
+				D2875A832B8F346D00C708FF /* ToolBarView.swift in Sources */,
+				D2875A852B8F348100C708FF /* ReminderView.swift in Sources */,
+				D2875A7D2B8F344400C708FF /* HomeView.swift in Sources */,
 				D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */,
+				D2875A7F2B8F345000C708FF /* ItemView.swift in Sources */,
+				D2875A7B2B8F1F6F00C708FF /* Loading.swift in Sources */,
 				D28E955D2B8BA1FC00642D25 /* Item.swift in Sources */,
 				D290497D2B8E165C002FC73F /* LoginView.swift in Sources */,
 				D28E95592B8BA1FC00642D25 /* RemiderApp.swift in Sources */,
