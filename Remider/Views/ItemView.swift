@@ -11,42 +11,36 @@ struct ItemView: View {
     @State var title:String
     @State var subTitle:String
     @State var isOn:Bool
+    @State var isDetailViewPresented = false
+    @State var item:Item
     var body: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {self.isDetailViewPresented = true}, label: {
             HStack{
                 VStack{
                     Text(title)
+                        .font(.system(size: 20))
+                        .bold()
+                        
                     Text(subTitle)
-                }
-                
-                Image(systemName: isOn ? "checkmark.square.fill" : "square")
-                    .foregroundColor(isOn ? Color(UIColor.systemBlue) : Color.secondary)
+                }.padding()
+                Spacer()
+                Image(systemName: item.status ? "checkmark.square.fill" : "square")
+                    .foregroundColor(item.status ? Color(UIColor.systemBlue) : Color.white)
                     .onTapGesture {
-                        self.isOn.toggle()
-                    }
+                        item.status.toggle()
+                    }.padding()
                 
-            }
-        })
-        
-    }
-}
-struct CheckboxStyle: ToggleStyle {
-
-    func makeBody(configuration: Self.Configuration) -> some View {
-
-        return HStack {
-            Image(systemName: configuration.isOn ? "checkmark.square" : "square")
-                .resizable()
-                .frame(width: 24, height: 24)
-                .foregroundColor(configuration.isOn ? .blue : .gray)
-                .font(.system(size: 20, weight: .regular, design: .default))
-                configuration.label
-        }
-        .onTapGesture { configuration.isOn.toggle() }
+            }.background(item.status ? Color.green.opacity(0.5) : Color.blue.opacity(0.5))
+                .foregroundColor(.white)
+            .cornerRadius(10)
+        }).sheet(isPresented: $isDetailViewPresented) {
+            DetailView(item: item)
+        }.transition(.moveOrFade(edge: .trailing))
 
     }
 }
+
 #Preview {
-    ItemView(title: "hello", subTitle: "hello", isOn: true)
+    ItemView(title: "hello", subTitle: "hello", isOn: true, item: Item(title: "hello", bodyTile: "hii", status: true))
     
 }

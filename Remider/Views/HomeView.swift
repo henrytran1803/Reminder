@@ -14,7 +14,7 @@ struct HomeView: View {
                 VStack {
                     switch tabSelected {
                     case .house:
-                        ProfileView()
+                        ContentView()
                     case .person:
                         ProfileView()
                     case .gearshape:
