@@ -12,12 +12,12 @@ struct ContentView: View {
     @Query private var items: [Item]
     @State private var isDetailViewPresented = false
     @State private var selectedItem: Item?
-    
+    @State var newItem = Item(title: "new title", bodyTile: " new body", status: false, date: Date.now)
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    ItemView(title: item.title, subTitle: item.bodyTile, isOn: true, item: item)
+                    ItemView(title: item.title, subTitle: item.bodyTile, date: Date.now, isOn: true, item: item)
                             .scaledToFill()
                     
                             
@@ -27,22 +27,28 @@ struct ContentView: View {
                 //.onMove(perform: onMove)
             }
             .toolbar {
+
+                ToolbarItem {
+                    
+                    Button(action: {self.isDetailViewPresented = true}) {
+                        Label("Add Item", systemImage: "plus")
+                    }.sheet(isPresented: $isDetailViewPresented) {
+                        DetailViewNew(item: $newItem, isDetailViewPresented: $isDetailViewPresented)
+                        
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
                 }
             }
             .navigationTitle("Items")
         }
     }
 
-    private func addItem() {
+    public func addItem(item : Item) {
         withAnimation {
-            let newItem = Item(title: "new", bodyTile: "new body", status: true)
+            
+            let newItem = item
             modelContext.insert(newItem)
             
             
@@ -66,43 +72,135 @@ struct ContentView: View {
     }
 }
 struct DetailView: View {
-    let item: Item
-    @State var title: String
-    @State var status: Bool
-    init(item: Item) {
-        self.item = item
-        self._title = State(initialValue: item.title)
-        self._status = State(initialValue: item.status)
-    }
-    
+    @Binding var item: Item
+    @Binding var isDetailViewPresented: Bool
+    @Environment(\.modelContext) private var modelContext
+    @State private var wakeUp = Date.now
     var body: some View {
         VStack {
             Text("Title")
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
                 .font(.title)
                 .bold()
-            TextField("", text: $title)
+            TextField("", text: $item.title)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Text("Body")
-                .padding()
-            TextField("", text: $title)
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
+                .bold()
+            TextField("", text: $item.bodyTile)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(maxWidth: .infinity)
                 .padding()
             Spacer()
+            Text("Please select:")
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
+                .bold()
+            DatePicker("", selection: $wakeUp)
             Text("Status")
-            Toggle(isOn: $status) {
+                .bold()
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
             
+            Toggle(isOn: $item.status) {
+                
             }
         }
         HStack{
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: { self.isDetailViewPresented = false }, label: {
                 Image(systemName: "minus.circle.fill")
             }).padding()
                 .font(.system(size: 40))
                 .foregroundColor(.red)
             Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                self.isDetailViewPresented = false
+            }, label: {
+                Image(systemName: "checkmark.seal.fill")
+            }).padding()
+                .font(.system(size: 40))
+                .foregroundColor(.green)
+        }
+        .navigationTitle(item.title)
+    }
+}
+
+struct DetailViewNew: View {
+    @Binding var item: Item
+    @Binding var isDetailViewPresented: Bool
+    @Environment(\.modelContext) private var modelContext
+    @State private var wakeUp = Date.now
+    var body: some View {
+        VStack {
+            Text("Title")
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
+                .font(.title)
+                .bold()
+            TextField("", text: $item.title)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            Text("Body")
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
+                .bold()
+            TextField("", text: $item.bodyTile)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(maxWidth: .infinity)
+                .padding()
+            Spacer()
+            Text("Please select:")
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
+                .bold()
+            DatePicker("", selection: $wakeUp)
+            Text("Status")
+                .bold()
+                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.trailing)
+            
+            Toggle(isOn: $item.status) {
+                
+            }
+        }
+        HStack{
+            Button(action: { self.isDetailViewPresented = false }, label: {
+                Image(systemName: "minus.circle.fill")
+            }).padding()
+                .font(.system(size: 40))
+                .foregroundColor(.red)
+            Spacer()
+            Button(action: {
+                withAnimation {
+                    // Tạo một đối tượng Item mới từ dữ liệu của item hiện tại
+                    let newItem =  Item(title: "new title", bodyTile: " new body", status: false, date: Date.now)
+                       newItem.title = item.title
+                       newItem.bodyTile = item.bodyTile
+                       newItem.status = item.status
+                    newItem.date = item.date
+                       // Lưu đối tượng mới vào modelContext
+                       modelContext.insert(newItem)
+                       // Lưu các thay đổi vào modelContext
+                    item.title  = "new title"
+                    item.bodyTile = "new body"
+                    item.status = false
+                    item.date = Date.now
+                       try? modelContext.save()
+                    
+                }
+                self.isDetailViewPresented = false
+            }, label: {
                 Image(systemName: "checkmark.seal.fill")
             }).padding()
                 .font(.system(size: 40))

@@ -13,7 +13,7 @@ struct Loading: View {
     @State private var isView = false
 
      var body: some View {
-         NavigationView {
+     
              HStack {
                  Button {
                      isShowingRegistration.toggle()
@@ -29,8 +29,9 @@ struct Loading: View {
                  }
              }
              
-
-         }.fullScreenCover(isPresented: $isView) {
+            
+             .background(Color.purple.opacity(0.7))
+         .fullScreenCover(isPresented: $isView) {
              LoginView()
          }
          
@@ -38,6 +39,7 @@ struct Loading: View {
              DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                              withAnimation {
                                  isShowingRegistration = true
+                            
                     }
                  DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                      isView = true

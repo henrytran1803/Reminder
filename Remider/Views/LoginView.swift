@@ -29,22 +29,28 @@ struct LoginView: View {
                     .animation(.easeInOut, value: isShowingAnimation)
                 Spacer()
                 Text("User name")
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.trailing)
                 TextField("User Name",text: $username)
                     .padding()
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color("Color").opacity(0.3))
                     .cornerRadius(8)
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
                 Text("Password")
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.trailing)
                 SecureField("Password",text: $password)
                     .padding()
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color("Color").opacity(0.3))
                     .cornerRadius(8)
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
-                
+                let skyBlue = Color("Color")
                 Spacer()
                 Button("Đăng nhập") {
                     isShowingHome = true
@@ -58,7 +64,7 @@ struct LoginView: View {
                             message: Text("Username, password mustn't empty")
                         )
                     }
-                .buttonStyle(PressEffectButtonStyle(backgroundColor: Color.blue))
+                .buttonStyle(PressEffectButtonStyle(backgroundColor: skyBlue))
                 HStack {
                     Text("Chưa có tài khoản?")
                         .font(.system(size: 14))
@@ -69,7 +75,7 @@ struct LoginView: View {
                     }) {
                         Text("Tạo tài khoản")
                             .font(.system(size: 14))
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color("Color"))
                             .padding(.top, 8)
                     }
                 }
@@ -81,7 +87,10 @@ struct LoginView: View {
                                 isShowingAnimation = true
                    }
            }
+        }.fullScreenCover(isPresented: $isShowingRegistration) {
+            RegisterView()
         }
+
     }
 }
 struct PressEffectButtonStyle: ButtonStyle {

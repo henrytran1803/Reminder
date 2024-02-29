@@ -7,14 +7,25 @@
 
 import SwiftUI
 
+//extension User {
+//    struct Create: Content {
+//        var name: String
+//        var email: String
+//        var password: String
+//        var confirmPassword: String
+//    }
+//}
+
 struct RegisterView: View {
     @State var username = ""
+    @State var email = ""
     @State var password = ""
     @State var repeatpassword = ""
     @State private var showAlert = false
     @State private var showAlertEmpty = false
     @State private var showAlertEmptyPass = false
     @State private var isShowingAnimation = false
+    @State private var isShowingLogin = false
     var body: some View {
         NavigationView{
             VStack{
@@ -29,26 +40,45 @@ struct RegisterView: View {
                     .animation(.easeInOut, value: isShowingAnimation)
                 Spacer()
                 Text("User name")
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.trailing)
                 TextField("Username", text: $username)
                     .padding()
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color("Color").opacity(0.3))
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+                    .font(.system(size: 14))
+                    .multilineTextAlignment(.leading)
+                Text("Email")
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.trailing)
+                TextField("Email", text: $email)
+                    .padding()
+                    .background(Color("Color").opacity(0.3))
                     .cornerRadius(8)
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
                 Text("Password")
-                
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.trailing)
                 SecureField("Password", text: $password)
                     .padding()
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color("Color").opacity(0.3))
                     .cornerRadius(8)
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
                 Text("Repeat password")
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.trailing)
                 SecureField("Repeat password", text: $repeatpassword)
                     .padding()
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color("Color").opacity(0.3))
                     .cornerRadius(8)
                     .padding(.horizontal)
                     .font(.system(size: 14))
@@ -71,7 +101,7 @@ struct RegisterView: View {
                         showAlertEmpty = true
                     }
                 }
-                    .buttonStyle(PressEffectButtonStyle(backgroundColor: Color.blue))
+                    .buttonStyle(PressEffectButtonStyle(backgroundColor: Color("Color")))
                     .alert(isPresented: $showAlert) {
                             Alert(
                                 title: Text("Error"),
@@ -90,11 +120,11 @@ struct RegisterView: View {
                         .padding(.top, 8)
 
                     Button(action: {
-                       //action
+                        isShowingLogin = true
                     }) {
                         Text("Đăng nhập")
                             .font(.system(size: 14))
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color("Color"))
                             .padding(.top, 8)
                     }
                                     
@@ -106,6 +136,8 @@ struct RegisterView: View {
                                     isShowingAnimation = true
                        }
                }
+            }.fullScreenCover(isPresented: $isShowingLogin) {
+                LoginView()
             }
         }
     }
