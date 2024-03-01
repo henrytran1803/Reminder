@@ -7,11 +7,16 @@
 
 import Foundation
 struct UserToken: Codable {
-    let user: User
-    let id: String
-    let value: String
-}
-
-struct User: Codable {
-    let id: String
+    let status: Bool
+    let token: TokenData
+    
+    struct TokenData: Codable {
+        let id: String
+        let value: String
+        let user: User
+        
+        struct User: Codable {
+            let id: String
+        }
+    }
 }

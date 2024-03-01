@@ -13,6 +13,7 @@ struct LoginView: View {
     @State var isShowingHome = false
     @State var isShowingRegistration = false
     @State var isShowingAnimation = false
+    @State var result = ""
     @State private var showAlertEmpty = false
     var body: some View {
         NavigationView {
@@ -53,28 +54,37 @@ struct LoginView: View {
                 let skyBlue = Color("Color")
                 Spacer()
                 Button("Đăng nhập") {
-                    isShowingHome = true
                     if password.isEmpty || username.isEmpty {
                         showAlertEmpty = true
                     } else {
                         Task {
                             do {
-                                let token = try await performLoginAPICall(username: username, password: password)
-                                Alert(
-                                    title: Text(token)
-                                )
+                                let (status, tokenValue) = try await login()
+                                if status {
+                                    isShowingHome = true
+                                    print("Token value: \(tokenValue)")
+                                } else {
+                                    print("Failed to login")
+                                }
                             } catch {
                                 print("Error: \(error)")
                             }
                         }
                     }
                 }
+
                 .alert(isPresented: $showAlertEmpty) {
                         Alert(
                             title: Text("Error"),
                             message: Text("Username, password mustn't empty")
                         )
                     }
+//                .alert(isPresented: $result.isEmpty == false) {
+//                            Alert(
+//                                title: Text("Error"),
+//                                message: Text("Username, password mustn't empty")
+//                            )
+//                        }
                 .buttonStyle(PressEffectButtonStyle(backgroundColor: skyBlue))
                 HStack {
                     Text("Chưa có tài khoản?")
@@ -101,7 +111,36 @@ struct LoginView: View {
         }.fullScreenCover(isPresented: $isShowingRegistration) {
             RegisterView()
         }
+        .fullScreenCover(isPresented: $isShowingHome) {
+            // Nếu token không rỗng, chuyển sang HomeView()
+            HomeView()
+        }
 
+    }
+    func login() async throws -> (status: Bool, tokenValue: String) {
+        guard let url = URL(string: "http://localhost:8080/login/") else {
+            throw URLError(.badURL)
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        let loginString = "\(username):\(password)"
+        guard let loginData = loginString.data(using: .utf8) else {
+            throw NSError(domain: "Invalid login string", code: 0, userInfo: nil)
+        }
+        let base64LoginString = loginData.base64EncodedString()
+
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+
+        let (data, _) = try await URLSession.shared.data(for: request)
+        do {
+            let token = try JSONDecoder().decode(UserToken.self, from: data)
+            return (status: token.status, tokenValue: token.token.value)
+        } catch {
+            print("Error decoding JSON: \(error)")
+            throw error
+        }
     }
 }
 struct PressEffectButtonStyle: ButtonStyle {

@@ -21,6 +21,7 @@
 		D28E956C2B8BA1FF00642D25 /* RemiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E956B2B8BA1FF00642D25 /* RemiderTests.swift */; };
 		D28E95762B8BA1FF00642D25 /* RemiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95752B8BA1FF00642D25 /* RemiderUITests.swift */; };
 		D28E95782B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95772B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift */; };
+		D28EF48D2B91C0EE00C12222 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28EF48C2B91C0EE00C12222 /* SettingView.swift */; };
 		D290497D2B8E165C002FC73F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497C2B8E165C002FC73F /* LoginView.swift */; };
 		D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497E2B8E1772002FC73F /* RegisterView.swift */; };
 		D2B4052D2B91721900A2DCDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4052C2B91721900A2DCDE /* User.swift */; };
@@ -62,6 +63,7 @@
 		D28E95712B8BA1FF00642D25 /* ReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28E95752B8BA1FF00642D25 /* RemiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderUITests.swift; sourceTree = "<group>"; };
 		D28E95772B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D28EF48C2B91C0EE00C12222 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D290497C2B8E165C002FC73F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D290497E2B8E1772002FC73F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D2B4052C2B91721900A2DCDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				D2875A802B8F345B00C708FF /* ProfileView.swift */,
 				D2875A822B8F346D00C708FF /* ToolBarView.swift */,
 				D2875A842B8F348100C708FF /* ReminderView.swift */,
+				D28EF48C2B91C0EE00C12222 /* SettingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				D28E955B2B8BA1FC00642D25 /* ContentView.swift in Sources */,
 				D2875A812B8F345B00C708FF /* ProfileView.swift in Sources */,
 				D2875A832B8F346D00C708FF /* ToolBarView.swift in Sources */,
+				D28EF48D2B91C0EE00C12222 /* SettingView.swift in Sources */,
 				D2875A852B8F348100C708FF /* ReminderView.swift in Sources */,
 				D2875A7D2B8F344400C708FF /* HomeView.swift in Sources */,
 				D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */,
