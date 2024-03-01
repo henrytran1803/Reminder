@@ -54,8 +54,19 @@ struct LoginView: View {
                 Spacer()
                 Button("Đăng nhập") {
                     isShowingHome = true
-                    if(password.isEmpty || username.isEmpty ){
+                    if password.isEmpty || username.isEmpty {
                         showAlertEmpty = true
+                    } else {
+                        Task {
+                            do {
+                                let token = try await performLoginAPICall(username: username, password: password)
+                                Alert(
+                                    title: Text(token)
+                                )
+                            } catch {
+                                print("Error: \(error)")
+                            }
+                        }
                     }
                 }
                 .alert(isPresented: $showAlertEmpty) {

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Remider
+@testable import Reminder
 
 final class RemiderTests: XCTestCase {
 

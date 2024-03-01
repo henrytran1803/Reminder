@@ -23,6 +23,8 @@
 		D28E95782B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E95772B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift */; };
 		D290497D2B8E165C002FC73F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497C2B8E165C002FC73F /* LoginView.swift */; };
 		D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497E2B8E1772002FC73F /* RegisterView.swift */; };
+		D2B4052D2B91721900A2DCDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4052C2B91721900A2DCDE /* User.swift */; };
+		D2B405302B91744500A2DCDE /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4052F2B91744500A2DCDE /* api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		D28E95772B8BA1FF00642D25 /* RemiderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemiderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D290497C2B8E165C002FC73F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D290497E2B8E1772002FC73F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		D2B4052C2B91721900A2DCDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2B4052F2B91744500A2DCDE /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		D28E95572B8BA1FC00642D25 /* Remider */ = {
 			isa = PBXGroup;
 			children = (
+				D2B4052E2B91743800A2DCDE /* ApiCall */,
 				D29049812B8E17C7002FC73F /* Model */,
 				D29049802B8E17B0002FC73F /* Views */,
 				D28E95582B8BA1FC00642D25 /* RemiderApp.swift */,
@@ -166,8 +171,17 @@
 			isa = PBXGroup;
 			children = (
 				D28E955C2B8BA1FC00642D25 /* Item.swift */,
+				D2B4052C2B91721900A2DCDE /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D2B4052E2B91743800A2DCDE /* ApiCall */ = {
+			isa = PBXGroup;
+			children = (
+				D2B4052F2B91744500A2DCDE /* api.swift */,
+			);
+			path = ApiCall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,9 +322,11 @@
 				D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */,
 				D2875A7F2B8F345000C708FF /* ItemView.swift in Sources */,
 				D2875A7B2B8F1F6F00C708FF /* Loading.swift in Sources */,
+				D2B4052D2B91721900A2DCDE /* User.swift in Sources */,
 				D28E955D2B8BA1FC00642D25 /* Item.swift in Sources */,
 				D290497D2B8E165C002FC73F /* LoginView.swift in Sources */,
 				D28E95592B8BA1FC00642D25 /* RemiderApp.swift in Sources */,
+				D2B405302B91744500A2DCDE /* api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

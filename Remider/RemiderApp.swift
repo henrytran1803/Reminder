@@ -25,7 +25,7 @@ struct RemiderApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            LoginView()
         }
         .modelContainer(sharedModelContainer)
     }
