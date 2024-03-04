@@ -24,8 +24,11 @@
 		D28EF48D2B91C0EE00C12222 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28EF48C2B91C0EE00C12222 /* SettingView.swift */; };
 		D290497D2B8E165C002FC73F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497C2B8E165C002FC73F /* LoginView.swift */; };
 		D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D290497E2B8E1772002FC73F /* RegisterView.swift */; };
+		D2A3483A2B9362AA00EAF6A6 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A348392B9362AA00EAF6A6 /* GetStartedView.swift */; };
+		D2A3483C2B9366B700EAF6A6 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3483B2B9366B700EAF6A6 /* ForgotPasswordView.swift */; };
 		D2B4052D2B91721900A2DCDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4052C2B91721900A2DCDE /* User.swift */; };
 		D2B405302B91744500A2DCDE /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4052F2B91744500A2DCDE /* api.swift */; };
+		D2C8DCF02B95AF4000F50D27 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8DCEF2B95AF4000F50D27 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +69,11 @@
 		D28EF48C2B91C0EE00C12222 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D290497C2B8E165C002FC73F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D290497E2B8E1772002FC73F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		D2A348392B9362AA00EAF6A6 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		D2A3483B2B9366B700EAF6A6 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D2B4052C2B91721900A2DCDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D2B4052F2B91744500A2DCDE /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
+		D2C8DCEF2B95AF4000F50D27 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,11 +124,11 @@
 		D28E95572B8BA1FC00642D25 /* Remider */ = {
 			isa = PBXGroup;
 			children = (
-				D2B4052E2B91743800A2DCDE /* ApiCall */,
-				D29049812B8E17C7002FC73F /* Model */,
-				D29049802B8E17B0002FC73F /* Views */,
 				D28E95582B8BA1FC00642D25 /* RemiderApp.swift */,
-				D28E955E2B8BA1FE00642D25 /* Assets.xcassets */,
+				D2C8DCEC2B95AEE800F50D27 /* UI */,
+				D2C8DCEB2B95AEDF00F50D27 /* Services */,
+				D2C8DCEA2B95AED500F50D27 /* Common */,
+				D2C8DCE92B95AEC800F50D27 /* Modules */,
 				D28E95602B8BA1FE00642D25 /* Preview Content */,
 			);
 			path = Remider;
@@ -153,38 +159,233 @@
 			path = RemiderUITests;
 			sourceTree = "<group>";
 		};
-		D29049802B8E17B0002FC73F /* Views */ = {
+		D2C8DCE92B95AEC800F50D27 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D28E955A2B8BA1FC00642D25 /* ContentView.swift */,
-				D290497C2B8E165C002FC73F /* LoginView.swift */,
-				D290497E2B8E1772002FC73F /* RegisterView.swift */,
-				D2875A7A2B8F1F6F00C708FF /* Loading.swift */,
-				D2875A7C2B8F344400C708FF /* HomeView.swift */,
+				D2C8DD022B95B0EF00F50D27 /* Reminder */,
+				D2C8DD002B95B0BB00F50D27 /* GettingStarted */,
+				D2C8DCFE2B95B08600F50D27 /* Setting */,
+				D2C8DCF82B95AFF200F50D27 /* ForfotPassword */,
+				D2C8DCF72B95AFDF00F50D27 /* Profile */,
+				D2C8DCF62B95AFD500F50D27 /* Home */,
+				D2C8DCF52B95AFC400F50D27 /* Register */,
+				D2C8DCF32B95AFAD00F50D27 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D2C8DCEA2B95AED500F50D27 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCF22B95AF8F00F50D27 /* Resources */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D2C8DCEB2B95AEDF00F50D27 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCF12B95AF7C00F50D27 /* APIServices */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D2C8DCEC2B95AEE800F50D27 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCFC2B95B05C00F50D27 /* Loading */,
+				D2C8DCEE2B95AF1600F50D27 /* ToolBar */,
+				D2C8DCED2B95AEF100F50D27 /* Button */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D2C8DCED2B95AEF100F50D27 /* Button */ = {
+			isa = PBXGroup;
+			children = (
 				D2875A7E2B8F345000C708FF /* ItemView.swift */,
-				D2875A802B8F345B00C708FF /* ProfileView.swift */,
-				D2875A822B8F346D00C708FF /* ToolBarView.swift */,
-				D2875A842B8F348100C708FF /* ReminderView.swift */,
-				D28EF48C2B91C0EE00C12222 /* SettingView.swift */,
+				D2C8DCEF2B95AF4000F50D27 /* Button.swift */,
 			);
-			path = Views;
+			path = Button;
 			sourceTree = "<group>";
 		};
-		D29049812B8E17C7002FC73F /* Model */ = {
+		D2C8DCEE2B95AF1600F50D27 /* ToolBar */ = {
 			isa = PBXGroup;
 			children = (
-				D28E955C2B8BA1FC00642D25 /* Item.swift */,
-				D2B4052C2B91721900A2DCDE /* User.swift */,
+				D2875A822B8F346D00C708FF /* ToolBarView.swift */,
 			);
-			path = Model;
+			path = ToolBar;
 			sourceTree = "<group>";
 		};
-		D2B4052E2B91743800A2DCDE /* ApiCall */ = {
+		D2C8DCF12B95AF7C00F50D27 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
 				D2B4052F2B91744500A2DCDE /* api.swift */,
 			);
-			path = ApiCall;
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		D2C8DCF22B95AF8F00F50D27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D28E955E2B8BA1FE00642D25 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2C8DCF32B95AFAD00F50D27 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DD052B95B25800F50D27 /* UserModel */,
+				D2C8DCF42B95AFB300F50D27 /* LoginView */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D2C8DCF42B95AFB300F50D27 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				D290497C2B8E165C002FC73F /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		D2C8DCF52B95AFC400F50D27 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCFB2B95B04400F50D27 /* RegisterView */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		D2C8DCF62B95AFD500F50D27 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCFD2B95B06E00F50D27 /* HomeView */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D2C8DCF72B95AFDF00F50D27 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCFA2B95B01200F50D27 /* ProfileView */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D2C8DCF82B95AFF200F50D27 /* ForfotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCF92B95B00400F50D27 /* ForfotPasswordView */,
+			);
+			path = ForfotPassword;
+			sourceTree = "<group>";
+		};
+		D2C8DCF92B95B00400F50D27 /* ForfotPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				D2A3483B2B9366B700EAF6A6 /* ForgotPasswordView.swift */,
+			);
+			path = ForfotPasswordView;
+			sourceTree = "<group>";
+		};
+		D2C8DCFA2B95B01200F50D27 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				D2875A802B8F345B00C708FF /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		D2C8DCFB2B95B04400F50D27 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				D290497E2B8E1772002FC73F /* RegisterView.swift */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		D2C8DCFC2B95B05C00F50D27 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				D2875A7A2B8F1F6F00C708FF /* Loading.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		D2C8DCFD2B95B06E00F50D27 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				D2875A7C2B8F344400C708FF /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		D2C8DCFE2B95B08600F50D27 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DCFF2B95B08D00F50D27 /* SettingView */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		D2C8DCFF2B95B08D00F50D27 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				D28EF48C2B91C0EE00C12222 /* SettingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		D2C8DD002B95B0BB00F50D27 /* GettingStarted */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DD012B95B0C900F50D27 /* GettingStartedView */,
+			);
+			path = GettingStarted;
+			sourceTree = "<group>";
+		};
+		D2C8DD012B95B0C900F50D27 /* GettingStartedView */ = {
+			isa = PBXGroup;
+			children = (
+				D2A348392B9362AA00EAF6A6 /* GetStartedView.swift */,
+			);
+			path = GettingStartedView;
+			sourceTree = "<group>";
+		};
+		D2C8DD022B95B0EF00F50D27 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8DD042B95B24600F50D27 /* ReminderModel */,
+				D2C8DD032B95B0F900F50D27 /* ReminderView */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		D2C8DD032B95B0F900F50D27 /* ReminderView */ = {
+			isa = PBXGroup;
+			children = (
+				D28E955A2B8BA1FC00642D25 /* ContentView.swift */,
+				D2875A842B8F348100C708FF /* ReminderView.swift */,
+			);
+			path = ReminderView;
+			sourceTree = "<group>";
+		};
+		D2C8DD042B95B24600F50D27 /* ReminderModel */ = {
+			isa = PBXGroup;
+			children = (
+				D28E955C2B8BA1FC00642D25 /* Item.swift */,
+			);
+			path = ReminderModel;
+			sourceTree = "<group>";
+		};
+		D2C8DD052B95B25800F50D27 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				D2B4052C2B91721900A2DCDE /* User.swift */,
+			);
+			path = UserModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,8 +520,10 @@
 			files = (
 				D28E955B2B8BA1FC00642D25 /* ContentView.swift in Sources */,
 				D2875A812B8F345B00C708FF /* ProfileView.swift in Sources */,
+				D2A3483C2B9366B700EAF6A6 /* ForgotPasswordView.swift in Sources */,
 				D2875A832B8F346D00C708FF /* ToolBarView.swift in Sources */,
 				D28EF48D2B91C0EE00C12222 /* SettingView.swift in Sources */,
+				D2A3483A2B9362AA00EAF6A6 /* GetStartedView.swift in Sources */,
 				D2875A852B8F348100C708FF /* ReminderView.swift in Sources */,
 				D2875A7D2B8F344400C708FF /* HomeView.swift in Sources */,
 				D290497F2B8E1772002FC73F /* RegisterView.swift in Sources */,
@@ -331,6 +534,7 @@
 				D290497D2B8E165C002FC73F /* LoginView.swift in Sources */,
 				D28E95592B8BA1FC00642D25 /* RemiderApp.swift in Sources */,
 				D2B405302B91744500A2DCDE /* api.swift in Sources */,
+				D2C8DCF02B95AF4000F50D27 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

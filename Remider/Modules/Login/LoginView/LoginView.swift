@@ -13,26 +13,26 @@ struct LoginView: View {
     @State var isShowingHome = false
     @State var isShowingRegistration = false
     @State var isShowingAnimation = false
+    @State var isShowingForgotPassword = false
+    
     @State var result = ""
     @State private var showAlertEmpty = false
     var body: some View {
         NavigationView {
             VStack{
-                
-                Image(systemName: "person.circle")
-                    .symbolRenderingMode(.palette)
-                    .renderingMode(.template)
-                    .font(.system(size: 60))
-                    .imageScale(.large)
-                    .rotationEffect(.degrees(isShowingAnimation ? 360 : 0))
-                    .foregroundColor(isShowingAnimation ?  .green: .red)
-                    .padding()
-                    .animation(.easeInOut, value: isShowingAnimation)
+                Image("cloud")
+                    .resizable()
+                    .frame(width: 175, height: 150)
+                    .offset(x:-110,y:-60)
+                Text("Welcome back")
+                    .bold()
+                    .font(.system(size: 30))
+                    .foregroundStyle(Color("Color"))
+                Image("login")
+                    .resizable()
+                    .frame(width: 175, height: 200)
+//                    .resizable()
                 Spacer()
-                Text("User name")
-                    .padding(.leading, 20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.trailing)
                 TextField("User Name",text: $username)
                     .padding()
                     .background(Color("Color").opacity(0.3))
@@ -40,10 +40,8 @@ struct LoginView: View {
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
-                Text("Password")
-                    .padding(.leading, 20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.trailing)
+                    .padding(.bottom, 20)
+
                 SecureField("Password",text: $password)
                     .padding()
                     .background(Color("Color").opacity(0.3))
@@ -52,6 +50,18 @@ struct LoginView: View {
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
                 let skyBlue = Color("Color")
+                NavigationLink(destination: ForgotPasswordView(), isActive: $isShowingForgotPassword) {
+                    Button(action: {
+                        isShowingForgotPassword = true
+                    }) {
+                        Text("Forgot password")
+                            .bold()
+                            .font(.system(size: 14))
+                            .foregroundColor(Color("Color"))
+                            .padding(.top, 8)
+                    }
+                }
+
                 Spacer()
                 Button("Đăng nhập") {
                     if password.isEmpty || username.isEmpty {
@@ -87,14 +97,15 @@ struct LoginView: View {
 //                        }
                 .buttonStyle(PressEffectButtonStyle(backgroundColor: skyBlue))
                 HStack {
-                    Text("Chưa có tài khoản?")
+                    Text("Don’t have an account?")
                         .font(.system(size: 14))
                         .padding(.top, 8)
                     
                     Button(action: {
                         isShowingRegistration = true
                     }) {
-                        Text("Tạo tài khoản")
+                        Text("Sign Up")
+                            .bold()
                             .font(.system(size: 14))
                             .foregroundColor(Color("Color"))
                             .padding(.top, 8)
@@ -115,6 +126,10 @@ struct LoginView: View {
             // Nếu token không rỗng, chuyển sang HomeView()
             HomeView()
         }
+//        .fullScreenCover(isPresented: $isShowingForgotPassword) {
+//            // Nếu token không rỗng, chuyển sang HomeView()
+//            ForgotPasswordView()
+//        }
 
     }
     func login() async throws -> (status: Bool, tokenValue: String) {
@@ -142,21 +157,9 @@ struct LoginView: View {
             throw error
         }
     }
-}
-struct PressEffectButtonStyle: ButtonStyle {
-    var backgroundColor: Color // Thêm thuộc tính màu đây
     
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(backgroundColor) // Sử dụng màu từ thuộc tính backgroundColor
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-            .opacity(configuration.isPressed ? 0.6 : 1.0)
-            .animation(.easeInOut, value: configuration.isPressed)
-    }
 }
+
 
 #Preview {
     LoginView()

@@ -29,20 +29,20 @@ struct RegisterView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Image(systemName: "pencil.and.outline")
-                    .symbolRenderingMode(.palette)
-                    .renderingMode(.template)
-                    .font(.system(size: 60))
-                    .imageScale(.large)
-                    .rotationEffect(.degrees(isShowingAnimation ? 360 : 0))
-                    .foregroundColor(isShowingAnimation ?  .green: .red)
-                    .padding()
-                    .animation(.easeInOut, value: isShowingAnimation)
+                Image("cloud")
+                    .resizable()
+                    .frame(width: 175, height: 150)
+                    .offset(x:-110,y:-60)
+                
                 Spacer()
-                Text("User name")
-                    .padding(.leading, 20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.trailing)
+                Text("Welcome Onboard!")
+                    .bold()
+                    .font(.system(size: 30))
+                    .foregroundStyle(Color("Color"))
+                Text("Lets help you meet your task")
+                    .font(.system(size: 15))
+                    .foregroundStyle(Color("Color"))
+                    .padding(.bottom, 50)
                 TextField("Username", text: $username)
                     .padding()
                     .background(Color("Color").opacity(0.3))
@@ -50,10 +50,8 @@ struct RegisterView: View {
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
-                Text("Email")
-                    .padding(.leading, 20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.trailing)
+                    .padding(.bottom, 20)
+
                 TextField("Email", text: $email)
                     .padding()
                     .background(Color("Color").opacity(0.3))
@@ -61,10 +59,8 @@ struct RegisterView: View {
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
-                Text("Password")
-                    .padding(.leading, 20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.trailing)
+                    .padding(.bottom, 20)
+
                 SecureField("Password", text: $password)
                     .padding()
                     .background(Color("Color").opacity(0.3))
@@ -72,10 +68,8 @@ struct RegisterView: View {
                     .padding(.horizontal)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
-                Text("Repeat password")
-                    .padding(.leading, 20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.trailing)
+                    .padding(.bottom, 20)
+
                 SecureField("Repeat password", text: $repeatpassword)
                     .padding()
                     .background(Color("Color").opacity(0.3))
@@ -115,14 +109,15 @@ struct RegisterView: View {
                             )
                         }
                 HStack{
-                    Text("Đã có tài khoản?")
+                    Text("Already have an account?")
                         .font(.system(size: 14))
                         .padding(.top, 8)
 
                     Button(action: {
                         isShowingLogin = true
                     }) {
-                        Text("Đăng nhập")
+                        Text("Sign In")
+                            .bold()
                             .font(.system(size: 14))
                             .foregroundColor(Color("Color"))
                             .padding(.top, 8)
